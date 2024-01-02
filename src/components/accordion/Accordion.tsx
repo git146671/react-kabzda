@@ -1,7 +1,11 @@
 import React from "react";
 
-function AccordionTitle() {
-    return <h3>Menu</h3>;
+type AccordionPropsType = {
+    titleValue: string;
+}
+
+function AccordionTitle(props: AccordionPropsType) {
+    return <h3>{props.titleValue}</h3>;
 }
 
 function AccordionBody() {
@@ -12,9 +16,9 @@ function AccordionBody() {
     </ul>
 }
 
-export const Accordion = () => {
+export const Accordion = (props: AccordionPropsType) => {
     return <div>
-        <AccordionTitle/>
+        <AccordionTitle titleValue={props.titleValue}/>
         <AccordionBody/>
     </div>
 }

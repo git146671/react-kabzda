@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       12345
       <Rating value={5}/>
-      <Accordion/>
+      <Accordion titleValue='---Menu---'/>
     </div>
   );
 }
