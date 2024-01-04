@@ -1,4 +1,6 @@
-/*.App{*/
-/*    height: 100vh;*/
-/*    background-color: #676767;*/
-/*}*/
+.App{
+    height: 100vh;
+    background-color: #a1a1a1;
+    margin: 20px auto;
+    width: 100vh;
+}
