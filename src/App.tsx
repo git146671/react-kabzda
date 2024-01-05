@@ -5,6 +5,7 @@ import {Rating} from "./components/rating/Rating";
 import {OnOff} from "./components/onOff/OnOff";
 import {UncontrolledAccordion} from "./components/accordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/rating/UncontrolledRating";
+import {UncontrolledOnOff} from "./components/onOff/UncontrolledOnOff";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5;
 
@@ -22,6 +23,7 @@ function App() {
             <Accordion titleValue='---Menu---' collapsed={collapsed} onClick={() => setCollapsed(!collapsed)}/>
             <UncontrolledAccordion titleValue='---U-Menu---'/>
             <OnOff isOn={isOn} changeIsOn={(on) => setIsOn(on)}/>
+            <UncontrolledOnOff/>
         </div>
     );
 }
