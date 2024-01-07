@@ -1,4 +1,4 @@
-import React from "react";
+    import React from "react";
 import {RatingValueType} from "../../App";
 
 type RatingPropsType = {
