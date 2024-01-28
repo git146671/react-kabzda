@@ -11,20 +11,30 @@ const meta: Meta<typeof Accordion> = {
 export default meta;
 type Story = StoryObj<typeof Accordion>;
 
+let accordionItems = [
+    {"title": "1", "value": "v1"},
+    {"title": "2", "value": "v2"},
+    {"title": "3", "value": "v3"}
+];
+
 export const CollapsedAccordion: Story = {
-    render: () => <Accordion collapsed={true} titleValue='CollapsedAccordion' onClick={()=>{}}/>,
+    render: () => <Accordion collapsed={true} titleValue='CollapsedAccordion' onClick={()=>{}} items={accordionItems}
+                             onBodyClick={onBodyClickHandler}/>,
 };
 
-const onChangeHandler = action('12344')
+const onChangeHandler = action('12344');
+const onBodyClickHandler = action('12344');
 
 export const OpenedAccordion: Story = {
-    render: () => <Accordion collapsed={false} titleValue='OpenedAccordion' onClick={onChangeHandler}/>,
+    render: () => <Accordion collapsed={false} titleValue='OpenedAccordion' onClick={onChangeHandler} items={accordionItems}
+                             onBodyClick={onBodyClickHandler}/>,
 };
 
 export const AccordionComponent = () => {
     let [collapsed, setCollapsed] = useState<boolean>(false);
     return (
-        <Accordion collapsed={collapsed} titleValue='AccordionComponent' onClick={()=>setCollapsed(!collapsed)}/>
+        <Accordion collapsed={collapsed} titleValue='AccordionComponent' onClick={()=>setCollapsed(!collapsed)}
+                   items={accordionItems} onBodyClick={onBodyClickHandler}/>
     )
 };
 
